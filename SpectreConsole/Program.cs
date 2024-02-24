@@ -24,8 +24,8 @@ try
         //Search for the number of users registered in the system
         String sqlPersonRecord = "Select \r\n\tCount(*) as 'Number of registered users'\r\nFrom Person.Person";
 
-        //Busca a quantiddade de vendas no dia de hoje
-        String sqlSalesRecord = "Select Count(v.venda_status) as 'SalesQtd', IsNull(vs.descricao, '') as 'SalesStatus' From VDONLINE_VENDA as v Inner Join VDONLINE_VENDA_STATUS as vs On v.venda_status = vs.id_venda_status Where Convert(Date, v.data_venda) = Convert(Date, GetDate()) Group by vs.descricao";
+        //Search for the number of sales in the system
+        //String sqlSalesRecord = "Select Count(v.venda_status) as 'SalesQtd', IsNull(vs.descricao, '') as 'SalesStatus' From VDONLINE_VENDA as v Inner Join VDONLINE_VENDA_STATUS as vs On v.venda_status = vs.id_venda_status Where Convert(Date, v.data_venda) = Convert(Date, GetDate()) Group by vs.descricao";
 
 
         ////Sample Example
@@ -59,12 +59,12 @@ try
 
 
 
-        ////Consulta Quantidade de vendas no dia
+        ////Sample Example
         //var qtdSales = QueryManagement.ExecuteQuery<SalesRecord>(connection, sqlSalesRecord);
         //qtdSales.ForEach(p => Console.WriteLine(p.QtdSalesRecord));
 
 
-        ////Consulta Quantidade de vendas no dia
+        ////Sample Example
         //var qtdSales = QueryManagement.ExecuteQuery<SalesRecord>(connection, sqlSalesRecord);
         //qtdSales.ForEach(p => Console.WriteLine($"p.QtdSalesRecord{p.QtdSalesRecord}, p.SalesStatus{p.SalesStatus}"));
     }
